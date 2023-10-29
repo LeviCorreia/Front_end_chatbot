@@ -1,0 +1,121 @@
+:root {
+  --dark: #0c0c0c;
+  --white: #fff;
+  --purple: #5959ff;
+  --gray: #949494;
+  --gray2: #cccccc;
+}
+
+body{
+  background-color:var(--dark) ;
+}
+.container {
+  background-color: var(--dark);
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.box-questions {
+  margin-top: 3rem;
+  background-color: var(--white);
+  color: var(--dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 800px;
+  width: 80%; /* Utilize uma largura relativa */
+  max-width: 600px; /* Largura máxima para telas maiores */
+  border-radius: 10px;
+  text-align: center;
+  overflow: hidden;
+  margin: 2rem; /* Adiciona margem entre o container e a tela */
+}
+
+.header {
+  background-color: var(--purple);
+  color: var(--white);
+  border-radius: 10px 10px 0 0;
+  font-size: 1.4rem;
+  padding: 1rem;
+}
+
+.footer {
+  background-color: var(--purple);
+  border-radius: 0 0 10px 10px;
+  padding: 1rem;
+}
+
+.input_chat {
+  width: calc(100% - 20px); /* Reduzindo 20px para considerar o padding */
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin: 1rem 0;
+  box-sizing: border-box; /* Adicionando esta propriedade para incluir o padding e a borda no cálculo do tamanho */
+}
+
+
+button {
+  width: 50%; /* Largura do botão */
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+
+button:hover {
+  background-color: var(--gray);
+}
+
+#history {
+  padding: 1rem;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.my-message,
+.response-message {
+  padding: 1rem;
+  border-radius: 10px;
+  color: var(--white);
+  margin: 0;
+}
+
+.my-message {
+  text-align: right;
+  background-color: var(--gray);
+}
+
+.response-message {
+  text-align: left;
+  background-color: var(--gray2);
+}
+
+/* Adicionando media query para tornar o layout responsivo */
+@media (max-width: 768px) {
+  .box-questions {
+    width: 90%; /* Altera a largura do container para telas menores */
+    margin: 1rem; /* Adiciona uma margem menor para telas menores */
+  }
+
+  button {
+    width: 100%; /* Botão preenche a largura total */
+  }
+
+  .my-message,
+  .response-message {
+    word-break: break-word; /* Permite que as mensagens se ajustem para caber no espaço disponível */
+  }
+}
